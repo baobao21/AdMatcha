@@ -1,23 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Matchit</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Ad Matcha</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1618220179428-2316da55f539?auto=format&fit=crop&w=1650&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 3rem auto;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    img {
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Post Ad (Buy or Sell)</h2>
-  <form id="adForm">
-    <input type="text" name="user_id" placeholder="Your Name" required />
-    <textarea name="text" placeholder="I want to buy a hammer / I am selling a laptop" required></textarea>
-    <input type="text" name="location" placeholder="Location (optional)" />
-    <input type="text" name="whatsapp" placeholder="WhatsApp number" />
-    <input type="email" name="email" placeholder="Email (required)" />
-    <input type="file" name="file" accept="image/*" />
-    <button type="submit">Submit</button>
-  </form>
+  <div class="container">
+    <h2>Submit Your Ad</h2>
+    <form id="adForm">
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="text" placeholder="Ad Text (e.g. I want a bike)" required>
+      <input type="text" name="location" placeholder="Location (optional)">
+      <input type="text" name="whatsapp" placeholder="WhatsApp Number (optional)">
+      <input type="file" name="file">
+      <button type="submit" id="submitBtn">Submit</button>
+    </form>
 
-  <h3>Matched Ads</h3>
-  <div id="matches"></div>
+    <div id="matchedAds" style="margin-top: 20px;"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
