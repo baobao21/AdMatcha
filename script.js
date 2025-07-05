@@ -17,6 +17,7 @@ document.getElementById("submitBtn").addEventListener("click", async function (e
       return;
     }
 
+    // Show matches
     const matchedAds = document.getElementById("matchedAds");
     matchedAds.innerHTML = "";
     data.matches.forEach((ad) => {
