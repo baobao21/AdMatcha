@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <title>Universal Matcher</title>
-    <link rel="stylesheet" href="style.css" />
+  <title>Universal Matcher</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Universal Ad Matcher</h1>
-    <form id="adForm">
-        <input type="text" name="user_id" placeholder="Your Name or ID" required /><br>
-        <textarea name="text" placeholder="Describe what you want or have..." required></textarea><br>
-        <input type="text" name="location" placeholder="Location (optional)" /><br>
-        <input type="text" name="whatsapp" placeholder="WhatsApp (optional)" /><br>
-        <input type="email" name="email" placeholder="Email (optional)" /><br>
-        <input type="file" name="file" accept="image/*" /><br>
-        <button type="submit">Submit Ad</button>
-    </form>
-    <h2>Matched Ads</h2>
-    <div id="matches"></div>
-    <script src="script.js"></script>
+  <h2>Post Ad (Buy or Sell)</h2>
+  <form id="adForm">
+    <input type="text" name="user_id" placeholder="Your Name" required />
+    <textarea name="text" placeholder="I want to buy a hammer / I am selling a laptop" required></textarea>
+    <input type="text" name="location" placeholder="Location (optional)" />
+    <input type="text" name="whatsapp" placeholder="WhatsApp number" />
+    <input type="email" name="email" placeholder="Email (optional)" />
+    <input type="file" name="file" accept="image/*" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Matched Ads</h3>
+  <div id="matches"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
