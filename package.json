@@ -1,0 +1,12 @@
+{
+  "name": "admatcha",
+  "version": "1.0.0",
+  "description": "Car ad matching web app",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo 'No server needed'"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
