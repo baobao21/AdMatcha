@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AdMatcha</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>Universal Matcher</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Ad Matcha</h1>
-    <textarea id="adText" placeholder="Type your ad (e.g., I'm buying a car)"></textarea><br><br>
-    <input type="file" id="imageInput"><br><br>
-    <button id="submitBtn">Submit Ad</button>
-    <h3>Matched Ads:</h3>
-    <div id="results"></div>
-  </div>
-  <script src="script.js"></script>
+    <h1>Universal Ad Matcher</h1>
+    <form id="adForm">
+        <input type="text" name="user_id" placeholder="Your Name or ID" required /><br>
+        <textarea name="text" placeholder="Describe what you want or have..." required></textarea><br>
+        <input type="text" name="location" placeholder="Location (optional)" /><br>
+        <input type="text" name="whatsapp" placeholder="WhatsApp (optional)" /><br>
+        <input type="email" name="email" placeholder="Email (optional)" /><br>
+        <input type="file" name="file" accept="image/*" /><br>
+        <button type="submit">Submit Ad</button>
+    </form>
+    <h2>Matched Ads</h2>
+    <div id="matches"></div>
+    <script src="script.js"></script>
 </body>
 </html>
