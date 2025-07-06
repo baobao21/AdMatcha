@@ -2,7 +2,3 @@ body { font-family: Arial; max-width: 600px; margin: auto; padding: 20px; }
 input, textarea { width: 100%; margin: 5px 0; padding: 8px; }
 button { padding: 10px; background: #007bff; color: white; border: none; }
 .ad-block { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
-.whatsapp-link {
-  color: white;
-  text-decoration: none;
-}
