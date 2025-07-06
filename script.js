@@ -70,12 +70,12 @@ document.getElementById("searchBtn").addEventListener("click", async function ()
 
       const details = document.createElement("div");
       details.className = "ad-details";
-      details.innerHTML = `
-        <p><strong>📍 Location:</strong> ${ad.location || "N/A"}</p>
-        <p><strong>📞 WhatsApp:</strong> <a href="https://wa.me/${ad.whatsapp}" target="_blank">${ad.whatsapp}</a></p>
-        <p><strong>📨 Email:</strong> ${ad.email}</p>
-        ${ad.image_url ? `<img src="${ad.image_url}" alt="Ad Image" />` : ""}
-      `;
+   details.innerHTML = `
+  <p><strong>📍 Location:</strong> ${ad.location || "N/A"}</p>
+  <p><strong>📞 WhatsApp:</strong> <a class="whatsapp-link" href="https://wa.me/${ad.whatsapp}" target="_blank">${ad.whatsapp}</a></p>
+  ${ad.image_url ? `<img src="${ad.image_url}" style="max-width:100%; border-radius:8px;">` : ""}
+`;
+
 
       title.addEventListener("click", () => {
         details.style.display = details.style.display === "none" ? "block" : "none";
