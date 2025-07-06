@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!response.ok) {
         const errData = await response.json().catch(() => null);
-        const message = errData?.detail || `HTTP ${response.status}`;
+        const message = errData?.detail || HTTP ${response.status};
         alert("❌ Submission failed: " + message);
         return;
       }
