@@ -119,20 +119,23 @@ document.getElementById("loadDashboard").addEventListener("click", async functio
       <h3>Your Ads:</h3>
     `;
 
-    if (data.ads.length === 0) {
-      html += `<p>No ads posted yet.</p>`;
-    } else {
-      data.ads.forEach(ad => {
-        html += `
-          <div class="ad-box">
-            <p><strong>📝 Text:</strong> ${ad.text}</p>
-            <p><strong>📍 Location:</strong> ${ad.location || "N/A"}</p>
-            <p><strong>📅 Posted on:</strong> ${new Date(ad.timestamp).toLocaleString()}</p>
-            ${ad.image_url ? `<img src="${ad.image_url}" style="max-width:100%; border-radius:6px;">` : ""}
-          </div>
-        `;
-      });
-    }
+ if (data.ads.length === 0) {
+  html += `<p>No ads posted yet.</p>`;
+} else {
+  data.ads.forEach(ad => {
+    html += `
+      <div class="ad-box">
+        <p><strong>📝 Text:</strong> <span id="text-${ad.id}">${ad.text}</span></p>
+        <p><strong>📍 Location:</strong> <span id="loc-${ad.id}">${ad.location || "N/A"}</span></p>
+        <p><strong>📅 Posted:</strong> ${new Date(ad.timestamp).toLocaleString()}</p>
+        ${ad.image_url ? `<img src="${ad.image_url}" style="max-width:100%; border-radius:6px;">` : ""}
+        <button onclick="deleteAd('${ad.id}', '${data.email}')">❌ Delete</button>
+        <button onclick="editAd('${ad.id}', '${data.email}')">✏️ Edit</button>
+      </div>
+    `;
+  });
+}
+
 
     profileDiv.innerHTML = html;
 
