@@ -3,12 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
 
     const form = document.getElementById("adForm");
+    // Convert form fields to a plain object
     const formData = new FormData(form);
+    const jsonData = {};
+    formData.forEach((value, key) => {
+      jsonData[key] = value;
+    });
 
     try {
       const response = await fetch("https://car-match-backend.onrender.com/submit_ad/", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(jsonData),  // send JSON string
       });
 
       if (!response.ok) {
