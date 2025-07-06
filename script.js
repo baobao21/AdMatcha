@@ -91,3 +91,53 @@ document.getElementById("searchBtn").addEventListener("click", async function ()
     searchResultsDiv.innerHTML = "<p>❌ Failed to load ads.</p>";
   }
 });
+
+document.getElementById("loadDashboard").addEventListener("click", async function () {
+  const email = document.getElementById("dashboardEmail").value.trim();
+  const profileDiv = document.getElementById("userProfile");
+
+  if (!email) {
+    alert("Please enter your email.");
+    return;
+  }
+
+  profileDiv.innerHTML = "<p>Loading your profile...</p>";
+
+  try {
+    const response = await fetch(`https://car-match-backend.onrender.com/user_profile/?email=${encodeURIComponent(email)}`);
+    const data = await response.json();
+
+    if (data.detail) {
+      profileDiv.innerHTML = `<p>❌ ${data.detail}</p>`;
+      return;
+    }
+
+    let html = `
+      <p><strong>Email:</strong> ${data.email}</p>
+      <p><strong>WhatsApp:</strong> ${data.whatsapp}</p>
+      <p><strong>Total Ads:</strong> ${data.total_ads}</p>
+      <h3>Your Ads:</h3>
+    `;
+
+    if (data.ads.length === 0) {
+      html += `<p>No ads posted yet.</p>`;
+    } else {
+      data.ads.forEach(ad => {
+        html += `
+          <div class="ad-box">
+            <p><strong>📝 Text:</strong> ${ad.text}</p>
+            <p><strong>📍 Location:</strong> ${ad.location || "N/A"}</p>
+            <p><strong>📅 Posted on:</strong> ${new Date(ad.timestamp).toLocaleString()}</p>
+            ${ad.image_url ? `<img src="${ad.image_url}" style="max-width:100%; border-radius:6px;">` : ""}
+          </div>
+        `;
+      });
+    }
+
+    profileDiv.innerHTML = html;
+
+  } catch (err) {
+    console.error("Profile Load Error:", err);
+    profileDiv.innerHTML = "<p>❌ Failed to load profile.</p>";
+  }
+});
