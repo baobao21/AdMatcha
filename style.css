@@ -1,4 +1,62 @@
-body { font-family: Arial; max-width: 600px; margin: auto; padding: 20px; }
-input, textarea { width: 100%; margin: 5px 0; padding: 8px; }
-button { padding: 10px; background: #007bff; color: white; border: none; }
-.ad-block { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+body {
+  font-family: Arial;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: #f7f7f7;
+  color: #222;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.ad-block, .ad-box {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#ad-box img {
+  border-radius: 6px;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+#ad-box p, .ad-box p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
