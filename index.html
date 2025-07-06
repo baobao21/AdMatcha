@@ -1,4 +1,4 @@
-q<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -42,8 +42,32 @@ q<!DOCTYPE html>
       background-color: #45a049;
     }
 
-    img {
+    .ad-title {
+      font-weight: bold;
+      color: #ffe600;
+      cursor: pointer;
+    }
+
+    .ad-details {
+      display: none;
       margin-top: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .search-btn {
+      background-color: #2196F3;
+      margin-top: 20px;
+    }
+
+    .ad-box {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #fff;
       border-radius: 8px;
     }
   </style>
@@ -55,15 +79,17 @@ q<!DOCTYPE html>
       <input type="email" name="email" placeholder="Your Email" required>
       <input type="text" name="text" placeholder="Ad Text (e.g. I want a bike)" required>
       <input type="text" name="location" placeholder="Location (optional)">
-      <input type="text" name="whatsapp" placeholder="WhatsApp Number (required) required">
+      <input type="text" name="whatsapp" placeholder="WhatsApp Number (required)" required>
       <input type="file" name="file">
       <button type="submit" id="submitBtn">Submit</button>
     </form>
 
+    <button id="searchBtn" class="search-btn">🔍 Search All Ads</button>
+
     <div id="matchedAds" style="margin-top: 20px;"></div>
+    <div id="searchResults" style="margin-top: 30px;"></div>
   </div>
 
-<script type="module" src="script.js"></script>
-
+  <script type="module" src="script.js"></script>
 </body>
 </html>
